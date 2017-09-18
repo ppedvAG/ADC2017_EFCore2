@@ -7,6 +7,18 @@ namespace EfCore_1_1_2_QuerySpeedTest
 {
     class Program
     {
+        /*
+         * Achtung!
+         * Beachten Sie, dass Ef Core 1.1.2 noch keine
+         * komplexen Properties (in Ef Core genannt: Owned Properties)
+         * möglich sind. Somit hat Ef Core beim persistieren eines Customers
+         * ein klein weniger Arbeit, da keine neue Instanz von Address 
+         * erstellt werden muss.
+         * Vergleiche:
+         *  - EfCore_1_1_2_QuerySpeedTest.Models.Customer
+         *  - EfCore_QuerySpeedTest.Models.Customer
+         */
+
         private const string connectionString = "Data Source=lpc:localhost;Initial Catalog=EF_SpeedTest;Integrated Security=True";
 
         static void Main(string[] args)
