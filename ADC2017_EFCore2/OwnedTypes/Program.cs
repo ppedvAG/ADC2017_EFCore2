@@ -31,6 +31,14 @@ namespace OwnedTypes
         {
             modelBuilder.Entity<Customer>().Property(c => c.Firstname).IsRequired();
             modelBuilder.Entity<Customer>().Property(c => c.Lastname).IsRequired();
+
+            modelBuilder.Entity<Customer>().OwnsOne(c => c.Adress, ac =>
+                        {
+                            ac.Property(a => a.Street).IsRequired();
+                            ac.Property(a => a.City).IsRequired();
+                            ac.Property(a => a.Country).IsRequired();
+                            ac.Property(a => a.ZipCode).IsRequired();
+                        });
         }
     }
 }

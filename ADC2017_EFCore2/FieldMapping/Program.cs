@@ -42,6 +42,7 @@ namespace FieldMapping
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Author>().Property<string>("Url").HasField("_validatedUrl");
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

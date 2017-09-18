@@ -15,8 +15,7 @@ namespace EfFunctions
         {
             var likeExpression = $"%{name}%";
             
-            return _context.Books 
-                .FromSql($"SELECT * FROM dbo.Books WHERE Name LIKE {likeExpression}");
+            return _context.Books.Where(b => EF.Functions.Like(b.Name, likeExpression));
         }
     }
 }

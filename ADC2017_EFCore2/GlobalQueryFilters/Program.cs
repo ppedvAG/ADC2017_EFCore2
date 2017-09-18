@@ -20,11 +20,7 @@ namespace GlobalQueryFilters
 
                 foreach (var author in authors)
                 {
-                    Console.WriteLine($"{author.Name,-20}" + $"[IsDeleted: ");
-                    Console.ForegroundColor = author.IsDeleted ? ConsoleColor.Red : ConsoleColor.Green;
-                    Console.Write(author.IsDeleted);
-                    Console.ForegroundColor = ConsoleColor.Black;
-                    Console.WriteLine("]");
+                    Console.WriteLine($"{author.Name,-20}");
 
                     foreach (var book in author.Books)
                         Console.WriteLine($"\t{book.Name}");
@@ -101,6 +97,11 @@ namespace GlobalQueryFilters
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Author>().Property<bool>("IsDeleted");
+
+            modelBuilder.Entity<Author>().HasQueryFilter(a => !EF.Property<bool>(a, "IsDeleted"));
+
+            //modelBuilder.Entity<Author>().HasQueryFilter(a => !a.IsDeleted);
         }
 
         public override int SaveChanges()
