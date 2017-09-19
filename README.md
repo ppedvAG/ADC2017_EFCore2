@@ -1,21 +1,21 @@
-
+ 
 # ADC Core 2017 Entity Framework 2.0
 
 In diesem Repository finden Sie die auf der ADC Core 2017 vorgestellten Beispiespielprojekte zum Entity Framework 2.0 Vortrag.
 
 # Themen
- - Beispsielprojekte
- -- Global Query Filters & Shaddow Properties
- -- Field Mapping
- -- EF Functions
- -- From Sql
- -- Db Scalar Functions
- -- Owned Types
- - Preformance Messung
- -- SampleData (ein Projekt um eine Datenbank zu erstellen und mit Testdaten zu befüllen)
- -- EF 6 (mit und ohne ComplexProperties)
- -- EF Core 1.1.2 
- -- EF Core 2.0 (mit und ohne OwnedTypes)
+ 1. Beispsielprojekte
+  * Global Query Filters & Shaddow Properties
+  * Field Mapping
+  * EF Functions
+  * From Sql
+  * Db Scalar Functions
+  * Owned Types
+ 2. Preformance Messung
+  * SampleData (ein Projekt um eine Datenbank zu erstellen und mit Testdaten zu befüllen)
+  * EF 6 (mit und ohne ComplexProperties)
+  * EF Core 1.1.2 
+  * EF Core 2.0 (mit und ohne OwnedTypes)
 
 # Messergebnisse
 Die Messungen wurden alle auf einem SQL Server ausgeführt.
